@@ -31,7 +31,7 @@ Commit objects have the following properties: sha, url and author. Note that, as
 
 ## Installation
 
-1. Download the module: `npm install git-diff --save`
+1. Download the module: `npm install @shcallaway/git-diff --save`
 2. Create a [personal access token](https://github.com/blog/1509-personal-api-tokens) on GitHub.
 3. Require the module: `const GitDiff = require('git-diff')`
 4. Pass your token to the constructor: `const gitdiff = new GitDiff(process.env.TOKEN)`
