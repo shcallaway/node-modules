@@ -1,6 +1,6 @@
 {
   "name": "@shcallaway/git-diff",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get commits and commit deltas from remote repos",
   "main": "main.js",
   "scripts": {
