@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "shcallaway@gmail.com",
-  "license": "ISC",
+  "license": "Unlicense",
   "dependencies": {
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
