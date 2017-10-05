@@ -14,10 +14,10 @@ class GitDiff {
     this.token = token;
   }
 
-  getCommits(user, repo, since=null, until=null) {
+  getCommits(user, repo, queryStringParams) {
     const baseUrl = `https://${this.token}@api.github.com`;
     const path = `/repos/${user}/${repo}/commits`;
-    const queryString = this._createQueryString(since, until);
+    const queryString = this._createQueryString(queryStringParams);
 
     const options = this._formRequestOptions('GET', baseUrl + path + queryString);
 
@@ -33,13 +33,13 @@ class GitDiff {
     }, this._handleBadResponse);
   }
 
-  _createQueryString(since, until) {
-    if (since && until) {
-      return `?since=${since},until=${until}`;
-    } else if (since) {
-      return `?since=${since}`;
-    } else if (until) {
-      return `?until=${until}`;
+  _createQueryString(params) {
+    if (params.before && params.after) {
+      return `?since=${params.after}&until=${params.before}`;
+    } else if (params.before) {
+      return `?until=${params.before}`;
+    } else if (params.after) {
+      return `?since=${params.after}`;
     } else {
       return '';
     }
@@ -90,14 +90,13 @@ class Commit {
     this.url = url;
   }
 
-  // equivalent of overriding toString in Node
-  inspect() {
-    return `<${this.url}|${this.sha}> ${this.author}`;
+  toSlack() {
+   return `<${this.url}|${this.sha}> ${this.author}`; 
   }
 
   static fromRaw(rawCommit) {
     return new Commit(
-      rawCommit.sha, rawCommit.author.login, rawCommit.url
+      rawCommit.sha, rawCommit.author.login, rawCommit.html_url
     );
   }
 };
