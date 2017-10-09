@@ -35,3 +35,7 @@ Commit objects have the following properties: sha, url and author. Note that, as
 2. Create a [personal access token](https://github.com/blog/1509-personal-api-tokens) on GitHub.
 3. Require the module: `const GitDiff = require('git-diff')`
 4. Pass your token to the constructor: `const gitdiff = new GitDiff(process.env.TOKEN)`
+
+## Contributing
+
+There is a pre-commit hook that runs the tests. In order for the tests to pass, you must export your GitHub access token as `TOKEN`.

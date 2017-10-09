@@ -14,13 +14,13 @@ class GitDiff {
     this.token = token;
   }
 
-  getCommits(user, repo, queryStringParams) {
+  getCommits(user, repo, queryStringParams={}) {
     const baseUrl = `https://${this.token}@api.github.com`;
     const path = `/repos/${user}/${repo}/commits`;
     const queryString = this._createQueryString(queryStringParams);
 
     const options = this._formRequestOptions('GET', baseUrl + path + queryString);
-
+    
     return request(options)
     .then(res => {
       const commits = [];
@@ -95,9 +95,9 @@ class Commit {
   }
 
   static fromRaw(rawCommit) {
-    return new Commit(
-      rawCommit.sha, rawCommit.author.login, rawCommit.html_url
-    );
+    const author = 
+      (rawCommit.author && rawCommit.author.login ? rawCommit.author.login : null);
+    return new Commit(rawCommit.sha, author, rawCommit.html_url);
   }
 };
 

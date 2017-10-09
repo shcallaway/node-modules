@@ -1,15 +1,19 @@
 {
   "name": "@shcallaway/git-diff",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Get commits and commit deltas from remote repos",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "author": "shcallaway@gmail.com",
   "license": "Unlicense",
   "dependencies": {
+    "pre-commit": "^1.2.2",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
+  },
+  "pre-commit": {
+    "test"
   }
 }
