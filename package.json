@@ -1,0 +1,14 @@
+{
+  "name": "ez-s3",
+  "version": "1.0.0",
+  "description": "Simple module for reading from and writing to S3",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shcallaway@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.130.0"
+  }
+}
