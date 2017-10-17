@@ -90,10 +90,6 @@ class Commit {
     this.url = url;
   }
 
-  toSlack() {
-   return `<${this.url}|${this.sha}> ${this.author}`; 
-  }
-
   static fromRaw(rawCommit) {
     const author = 
       (rawCommit.author && rawCommit.author.login ? rawCommit.author.login : null);
