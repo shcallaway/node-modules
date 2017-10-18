@@ -43,7 +43,7 @@ class EasyS3 {
     const options = {
       Bucket: bucket,
       Key: object,
-      Body: EasyS3Client._convertStringToBinaryBuffer(data)
+      Body: EasyS3._convertStringToBinaryBuffer(data)
     }
 
     return new Promise((resolve, reject) => {

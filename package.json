@@ -1,5 +1,5 @@
 {
-  "name": "ez-s3",
+  "name": "@shcallaway/ez-s3",
   "version": "1.0.0",
   "description": "Simple module for reading from and writing to S3",
   "main": "main.js",
