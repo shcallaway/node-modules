@@ -14,7 +14,7 @@ client
 
 Download an object to drive:
 
-```
+```javascript
 client
 .download('my-bucket', 'my-object', true)
 .then(data => {});
@@ -22,23 +22,19 @@ client
 
 Upload a new object:
 
-```
+```javascript
 client.upload('my-bucket', 'new-file.txt', 'hello world');
 ```
 
 Append data to an existing object:
 
-```
+```javascript
 client.append('my-bucket', 'my-object', 'hello world');
 ```
 
 ### Authorization
 
 This module assumes you have [configured the AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) on the host machine.
-
-### Data Types
-
-On `upload` and `append`, EZ-S3 attempts to convert your data to a binary buffer. On `download`, it attempts to convert the downloaded object data to a string.
 
 ## Installation
 
