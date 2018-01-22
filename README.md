@@ -6,47 +6,35 @@ Simple module for reading from and writing to S3.
 
 Download an object to memory:
 
-```
+```javascript
 client
 .download('my-bucket', 'my-object')
-.then(data => {
-    // yay
-});
+.then(data => {});
 ```
 
-Or to drive, by passing a boolean flag:
+Download an object to drive:
 
 ```
 client
 .download('my-bucket', 'my-object', true)
-.then(data => {
-    // yay
-});
+.then(data => {});
 ```
 
 Upload a new object:
 
 ```
-client
-.upload('my-bucket', 'new-file.txt', 'hello world')
-.then(() => {
-    // yay
-});
+client.upload('my-bucket', 'new-file.txt', 'hello world');
 ```
 
-Or append data to an existing object:
+Append data to an existing object:
 
 ```
-client
-.append('my-bucket', 'my-object', 'hello world')
-.then(() => {
-    // yay
-});
+client.append('my-bucket', 'my-object', 'hello world');
 ```
 
 ### Authorization
 
-_This module assumes you have [configured the AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) on the host machine._
+This module assumes you have [configured the AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) on the host machine.
 
 ### Data Types
 
@@ -54,6 +42,6 @@ On `upload` and `append`, EZ-S3 attempts to convert your data to a binary buffer
 
 ## Installation
 
-1. Downlaod the module: `npm install @shcallaway/ez-s3 --save`
-2. Require the module: `const EasyS3 = require('ez-s3)`
-3. Instantiate a new client: `const client = new EasyS3();`
+1. Download: `npm install @shcallaway/ez-s3 --save`
+2. Require: `const EasyS3 = require('ez-s3)`
+3. Instantiate: `const client = new EasyS3();`
