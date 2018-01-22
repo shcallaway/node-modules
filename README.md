@@ -6,17 +6,15 @@ Get commits and commit deltas from remote GitHub repos.
 
 List recent commits:
 
-```
+```javascript
 gitdiff
 .getCommits('my_username', 'my_repo')
-.then(commits => {
-    // yay
-});
+.then(commits => {});
 ```
 
 Or list commits before/after a given ISO 8601 string:
 
-```
+```javascript
 const before = (new Date()).toISOString();
 const after = (new Date(1994, 6, 21)).toISOString();
 
@@ -31,10 +29,10 @@ Commit objects have the following properties: sha, url and author. Note that, as
 
 ## Installation
 
-1. Download the module: `npm install @shcallaway/git-diff --save`
+1. Download: `npm install @shcallaway/git-diff --save`
 2. Create a [personal access token](https://github.com/blog/1509-personal-api-tokens) on GitHub.
-3. Require the module: `const GitDiff = require('git-diff')`
-4. Pass your token to the constructor: `const gitdiff = new GitDiff(process.env.TOKEN)`
+3. Require: `const GitDiff = require('git-diff')`
+4. Instantiate: `const gitdiff = new GitDiff(process.env.TOKEN)`
 
 ## Contributing
 
