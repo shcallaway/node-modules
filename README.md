@@ -20,9 +20,7 @@ const after = (new Date(1994, 6, 21)).toISOString();
 
 gitdiff
 .getCommits('my_username', 'my_repo', { before, after })
-.then(commits => {
-    // yay
-});
+.then(commits => {});
 ```
 
 Commit objects have the following properties: sha, url and author. Note that, as of this writing, GitHub returns a maximum of 30 commits per request.
