@@ -1,4 +1,4 @@
-# EZ-S3
+# Easy S3
 
 Simple module for reading from and writing to S3.
 
